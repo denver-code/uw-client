@@ -1,0 +1,89 @@
+.mat-select {
+  border: 1px solid #B7EBA1 !important;
+  border-radius: .800rem;
+  font-family: Montserrat;
+  font-size: 16px !important;
+  background-color:#B7EBA1 !important;
+  width: 300px;
+  /*height: 35px;*/
+}
+.selected_mat {
+  text-align: left !important;
+  background-color:#B7EBA1 !important;
+  height: 40px !important;
+}
+
+.mat-select-trigger {
+  padding-top: 5px !important;
+  /*padding-bottom: 5px !important;*/
+  /*height: 35px !important;*/
+
+}
+/*list*/
+.service_text {
+  padding-top: 50px;
+  color: #4D4D4D;
+  font-size: 18px;
+  text-align: left;
+  font-family: Montserrat;
+}
+.expenses_item{
+  background: #FFFFFF;
+  color: #4D4D4D;
+  font-size: 18px;
+  font-family: Montserrat;
+  border-bottom:4px solid #F1F2F7  !important;
+}
+
+.number_row {
+  text-align: left;
+  margin-top: 10px;
+  /*width: 180px;*/
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.list_column {
+  font-family: Montserrat;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 18px;
+  /*opacity:0.5;*/
+  font-weight: 900;
+  color: #298D47;
+}
+
+/*.mat-select-arrow {*/
+/*margin-top: 10px !important;*/
+/*margin-right: 10px !important;*/
+/*color: #000000;*/
+/*}*/
+.selected_cities {
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .mat-select {
+    border: 1px solid #ffffff !important;
+    border-radius: .25rem;
+    font-family: Montserrat;
+    width: 390px;
+    /*height: 32px;*/
+  }
+}
+@media (max-width: 600px) {
+  .mat-select {
+    border: 1px solid #ffffff !important;
+    border-radius: .25rem;
+    font-family: Montserrat;
+    width: 80px;
+    /*height: 32px;*/
+  }
+  .selected_cities {
+    width: 150px;
+  }
+}
+

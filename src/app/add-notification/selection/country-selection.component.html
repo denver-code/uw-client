@@ -1,0 +1,22 @@
+<!--<h3>Single selection</h3>-->
+<!--<p>-->
+  <mat-form-field>
+    <mat-select [formControl]="countryCtrl" (selectionChange)="countrysChange($event)"  placeholder="" #singleSelect>
+      <mat-option>
+        <ngx-mat-select-search class="input_st"
+                               placeholderLabel="{{findCountryText[this.sessionService.activeLanguage]}}"
+                               noEntriesFoundLabel = "{{noEntriesFoundLabelText[this.sessionService.activeLanguage]}}"
+                               [formControl]="countryFilterCtrl">
+
+        </ngx-mat-select-search>
+      </mat-option>
+
+      <mat-option *ngFor="let coun of filteredCountrys | async" [value]="coun">
+        {{coun.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<!--</p>-->
+<!--<p>-->
+  <!--Selected Bank: {{countryCtrl.value?.name}}-->
+<!--</p>-->

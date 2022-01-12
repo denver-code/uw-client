@@ -1,0 +1,102 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <form novalidate (ngSubmit)="onSubmit(myAssistanceFrm)"  [formGroup]="myAssistanceFrm">
+    <div class="container container_client">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="col-12 px-3">
+            <div class="col-sm-8 col-12 px-0">
+              <div class="row">
+                <div class="col-12 px-3">
+                  <app-custom-menu [tabIndex]="-1"></app-custom-menu>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-4 col-12 px-0">
+              <div class="text-were-saved">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+
+
+      </div>
+      <div style="padding-top: 15px;" class="row">
+        <div class="col-12">
+          <div style="border-radius: 10px; padding-top: 20px;" class="card card_body">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div style="margin-left: 80px">
+                      <p class="row_header">{{contactUsText[this.sessionService.activeLanguage]}}</p>
+                      <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <i class="write_us"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <input type="email" class="form-control input_txt input-st"  placeholder="{{emailText[this.sessionService.activeLanguage]}}" formControlName="emailAddress">
+                          <div
+                            *ngIf="myAssistanceFrm.controls['emailAddress'].invalid && (myAssistanceFrm.controls['emailAddress'].dirty || myAssistanceFrm.controls['emailAddress'].touched)"
+                            class="errorText">
+
+                            <small *ngIf="myAssistanceFrm.controls['emailAddress'].errors.required" class="form-text">{{emailRequiredText[this.sessionService.activeLanguage]}}</small>
+
+                            <small *ngIf="myAssistanceFrm.controls['emailAddress'].errors.email" class="form-text">{{invalidEmailFormatText[this.sessionService.activeLanguage]}}</small>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <!--<div class="col-sm-12">-->
+                        <!--<div class="form-group">-->
+                          <!--<input type="text" class="form-control input_txt input-st"  placeholder="Subject" formControlName="theme">-->
+                          <!--<div-->
+                            <!--*ngIf="myAssistanceFrm.controls['theme'].invalid && (myAssistanceFrm.controls['theme'].dirty || myAssistanceFrm.controls['theme'].touched)"-->
+                            <!--class="errorText">-->
+                            <!--<small *ngIf="myAssistanceFrm.controls['theme'].errors.required" class="form-text">Please enter your Theme.</small>-->
+                          <!--</div>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <textarea style="height: 217px" class="form-control input_txt input-st"  placeholder="{{descriptionText[this.sessionService.activeLanguage]}}" formControlName="description"></textarea>
+                          <div
+                            *ngIf="myAssistanceFrm.controls['description'].invalid && (myAssistanceFrm.controls['description'].dirty || myAssistanceFrm.controls['description'].touched)"
+                            class="errorText">
+                            <small *ngIf="myAssistanceFrm.controls['description'].errors.required" class="form-text">{{pleaseDescriptionText[this.sessionService.activeLanguage]}}</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div style="padding-bottom: 0px;padding-top: 10px;" class="text-right">
+                          <div class="form-group">
+                            <button type="submit" value="submit" [disabled]="myAssistanceFrm.invalid" class="btn submit_btn send_text">{{sendText[this.sessionService.activeLanguage]}}</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</section>
+
+<app-messages></app-messages>

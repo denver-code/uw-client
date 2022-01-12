@@ -1,0 +1,78 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <div class="container container_client">
+    <div class="row">
+      <div class="col-xl-12 col-md-12 col-12 main-content">
+        <div class="title">
+          <span class="product">{{
+            homeTitle[this.sessionService.activeLanguage]
+          }}</span>
+          –
+          {{ homeHeading[this.sessionService.activeLanguage] }}
+        </div>
+
+        <div class="subtitle">
+          {{ homeSubtitle[this.sessionService.activeLanguage] }}
+        </div>
+
+        <div class="invoice-action-btn">
+          <button
+            class="get_service validate_text"
+            (click)="getService()"
+            mat-raised-button
+          >
+            <div
+              class="sizeButton"
+              title="{{ buttonRequest[this.sessionService.activeLanguage] }}"
+            >
+              {{ buttonRequest[this.sessionService.activeLanguage] }}
+            </div>
+          </button>
+        </div>
+
+        <div class="title p-0">
+          {{ homeHowWorks[this.sessionService.activeLanguage] }}
+          <span class="product">
+            {{ homeTitle[this.sessionService.activeLanguage] }}</span
+          >
+          {{ homeHowWorksPost[this.sessionService.activeLanguage] }}
+        </div>
+
+        <div class="details">
+          <div class="detail">
+            <i class="icon one"></i>
+            <div class="detail_inner">
+              <div class="detail_inner_title">
+                {{ homeNewOrder[this.sessionService.activeLanguage] }}
+              </div>
+              <div class="detail_inner_item">
+                {{ homeNewOrderFirstLine[this.sessionService.activeLanguage]
+                }}<br />
+                {{ homeNewOrderSecondLine[this.sessionService.activeLanguage]
+                }}<br />
+                {{ homeNewOrderThirdLine[this.sessionService.activeLanguage] }}
+              </div>
+            </div>
+          </div>
+          <div class="detail">
+            <i class="icon two"></i>
+            <div class="detail_inner">
+              <div class="detail_inner_title">
+                {{ homeExecutor[this.sessionService.activeLanguage] }}
+              </div>
+              <div class="detail_inner_item">
+                {{ homeExecutorFirstLine[this.sessionService.activeLanguage] }}
+                <br />
+                {{
+                  homeExecutorSecondLine[this.sessionService.activeLanguage]
+                }}
+                <br />
+                {{ homeExecutorThirdLine[this.sessionService.activeLanguage] }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

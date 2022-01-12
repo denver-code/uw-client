@@ -1,0 +1,307 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <form novalidate (ngSubmit)="onSubmit(editProfileFrm)" [formGroup]="editProfileFrm">
+    <div class="container container_client">
+
+      <section class="page-user-profile">
+        <div *ngIf="sessionService.getPermission(sessionService.permission.provider)" class="row">
+          <div class="col-lg-10">
+            <div class="col-12 px-3">
+              <div class="col-sm-8 col-12 px-0">
+                <div class="row">
+                  <div class="col-12 px-3">
+                    <app-provide-menu [tabIndex]="tabIndex"></app-provide-menu>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-sm-4 col-12 px-0">
+                <!--<div class="text-were-saved">-->
+
+                <!--</div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+        <div *ngIf="sessionService.getPermission(sessionService.permission.getService)" class="row align-items-center mob_button">
+          <div style="padding-bottom: 0px;padding-top: 15px;" class="col-md-12  text-center">
+            <div class="row">
+              <div class="col-sm-12 col-12 px-0">
+                <div class="form-group">
+                  <button type="submit" value="submit" (click)="backChats()"  class="btn submit_btn save_text">
+                    {{backText[this.sessionService.activeLanguage]}}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="padding-top: 15px" class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-lg-12">
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-12 px-3">
+                        <div class="row">
+                          <div style="padding-top: 16px;"
+                               class="col-xl-12 col-lg-6 col-12">
+                            <div style="border-radius: 10px" class="card text-center card_body px-0 pb-0">
+                              <div style="margin-top: 30px;margin-bottom: 30px;" class="card-content">
+                                <div  class="card-body px-0 pb-0">
+                                  <div style="color: #4D4D4D;">
+                                    <div class="row">
+                                      <div class="col-12 px-0 pb-0">
+                                        <div style="border-bottom: 2px solid #F1F2F7;" class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{nameText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <div  class="val_text">{{editProfileFrm.controls['Name'].value}}</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div *ngIf="sessionService.getPermission(sessionService.permission.provider)" class="head-text">
+                                                  <span class="se_text">{{companySizeText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                  <div *ngIf="sessionService.getPermission(sessionService.permission.getService) && editProfileFrm.controls['CompanySize'].value !==null && editProfileFrm.controls['CompanySize'].value !==''" class="head-text">
+                                                    <span class="se_text">{{companySizeText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <div  class="val_text">{{editProfileFrm.controls['CompanySize'].value}}</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div style="padding-top: 10px;" class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div *ngIf="sessionService.getPermission(sessionService.permission.provider)" class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{phoneNumberText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                                <div   class="form-group panel-heading">
+                                                  <div *ngIf="sessionService.getPermission(sessionService.permission.getService) && editProfileFrm.controls['PhoneNumber'].value !==null && editProfileFrm.controls['PhoneNumber'].value !==''" class="head-text">
+                                                    <span class="se_text">{{phoneNumberText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+
+                                                    <div  class="val_text">{{editProfileFrm.controls['PhoneNumber'].value}}</div>
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div *ngIf="sessionService.getPermission(sessionService.permission.provider)" class="head-text">
+                                                    <span class="se_text">{{taxText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                  <div *ngIf="sessionService.getPermission(sessionService.permission.getService) && editProfileFrm.controls['Tax'].value !==null && editProfileFrm.controls['Tax'].value !==''" class="head-text">
+                                                    <span class="se_text">{{taxText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <div  class="val_text">{{editProfileFrm.controls['Tax'].value}}</div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-12 px-0">
+                                        <div style="padding-top: 12px;" class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{emailText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group panel-heading">
+                                                  <div style="margin-top: 12px" class="head-text mob">
+                                                    <span style="color: #FFFFFF" class="se_text">11111</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <div  class="val_text">{{editProfileFrm.controls['emailAddress'].value}}</div>
+                                                  </div>
+                                                </div>
+                                                <div class="mb-1">
+
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span  class="se_text">{{servicesProvidedText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group panel-heading">
+                                                  <div style="margin-top: 12px" class="head-text mob">
+                                                    <span style="color: #FFFFFF" class="se_text">2222222222</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-0">
+
+                                                <div  class="services_multiple_selection">
+                                                  <div>
+                                                    <app-services-detail></app-services-detail>
+
+                                                  </div>
+
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                  <div style="padding-right: 268px" class="form-group">
+
+
+                                                  </div>
+
+                                                </div>
+
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-12 px-0 pb-0">
+                                        <div class="form-group">
+                                          <app-country-detail></app-country-detail>
+                                        </div>
+                                      </div>
+                                      <div class="col-12 px-0">
+                                        <div class="mb-1">
+                                          <div *ngIf="sessionService.getPermission(sessionService.permission.provider)" style="margin-left: 5px" class="head-text">
+                                            <section>
+                                              <mat-checkbox [disabled]="true" class="example-margin"  formControlName="agree">
+                                                <span class="agree-my" [innerHTML]="transformHTML(receiveEmailAboutHTML[this.sessionService.activeLanguage])"></span>
+                                              </mat-checkbox>
+                                            </section>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row save-changes">
+                  <div class="col-12 mt-1">
+                    <button *ngIf="sessionService.getPermission(sessionService.permission.provider)" (click)="editProvideProfile()" class="btn save-changes-btn submit_btn validate_text">{{editText[this.sessionService.activeLanguage]}}
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-lg-12">
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-12 px-3">
+                        <div class="row">
+                          <div style="padding-bottom: 25px;"
+                               class="col-xl-12 col-lg-12 col-12">
+                            <div style="border-radius: 10px" class="card text-center card_body">
+                              <div style="margin-top: 30px;margin-bottom: 30px;" class="card-content-tree">
+                                <app-tree-reviews [chatId]="chatId"></app-tree-reviews>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+  </form>
+</section>
+
+<app-messages></app-messages>

@@ -1,0 +1,74 @@
+.card_body {
+  background: #272E48 !important;
+}
+.container_client {
+  max-width: 550px !important;
+  padding-top: 80px;
+}
+.client-log-container {
+  /*position: relative;*/
+  /*padding: 5px;*/
+  /*background-color: aqua;*/
+}
+
+.client-log-loading-shade {
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*bottom: 56px;*/
+  /*right: 0;*/
+  /*background: rgba(0, 0, 0, 0.15);*/
+  /*z-index: 1;*/
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+}
+
+.client-log-card {
+  /*margin: 5px;*/
+  /*padding-bottom: 40px;*/
+}
+.header_text {
+  color: #8A99B5;
+  /*border-bottom:1px solid #464D5C;*/
+  font-size: 24px;
+  margin-top: 10px;
+  /*margin-right: 30px;*/
+  /*margin-left: 30px;*/
+  text-align: left;
+}
+
+.card-main {
+  background-color:#272E48;
+  padding-top: 35px;
+  margin-top: 5px;
+  border-radius: 10px !important;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.mat-card-image:first-child {
+  /* margin-top: -16px; */
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.profilePicThumb {
+  border-top-left-radius: 1.5rem !important;
+  border-top-right-radius: 1.5rem !important;
+  border-radius: 1.5rem;
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);*/
+  /*box-shadow: none;*/
+  height: 40px;
+  left: 280px;
+  margin-top: 0;
+  top: -90px;
+  width: 40px;
+  padding: 1px;
+  position: absolute;
+}

@@ -1,0 +1,131 @@
+<div class="card-body">
+  <div>
+    <div  class="row invoice-info">
+      <div class="col-sm-12 col-12 mt-1">
+        <div class="mb-1">
+          <span style="font-size: 20px;font-weight: 700;padding-right: 30px;margin-bottom: 30px;position: relative; top:-15px;">{{rateText[this.sessionService.activeLanguage]}} <b>{{currentRate}}</b></span>
+          <ngb-rating [(rate)]="currentRate" [max]="5" [readonly]="readonly">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 5">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+          <hr style="background-color: #464D5C">
+        </div>
+      </div>
+
+    </div>
+    <div style="padding-bottom: 30px" class="row invoice-info">
+      <div class="col-xl-12 col-lg-12 col-12 mt-1">
+        <div style="padding-bottom: 10px" class="mb-1">
+          <div class="row">
+            <div class="col-xl-4 col-lg-12 col-12 mt-1">
+              <h6 style="padding-top: 10px" class="service_text">{{userReviewsTextText[this.sessionService.activeLanguage]}}</h6>
+            </div>
+            <div class="col-xl-8 col-lg-12 col-12 mt-1">
+              <button [hidden]="!sessionService.getPermission(sessionService.permission.getService)" class="save-changes-btn submit_btn validate_text" (click)="getWriteReview()" mat-raised-button>
+                {{writeReviewText[this.sessionService.activeLanguage]}}
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-12 col-lg-12 col-12 mt-1">
+
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+          <!-- This is the tree node template for leaf nodes -->
+          <mat-tree-node *matTreeNodeDef="let node;" matTreeNodePadding>
+            <!-- use a disabled button to provide padding for tree leaf -->
+            <button mat-icon-button disabled></button>
+            <div>
+              <div><span *ngIf="node.level === 0">
+                                              <ngb-rating [(rate)]="node.rating" [max]="5" [readonly]="readonly">
+                                                <ng-template let-fill="fill" let-index="index">
+                                                  <span class="star_list" [class.filled]="fill === 100"
+                                                        [class.bad]="index < 5">&#9733;</span>
+                                                </ng-template>
+                                              </ngb-rating>
+                                            </span><span class="name_text"> {{node.firstname}} {{node.surname}}</span>
+              </div>
+
+              <div id="more{{node.name}}" class="size">
+                {{node.description}}
+                <div *ngIf="node.description.length > 40" id="morebtn{{node.name}}" (click)="moreTreeNode(node)" class="btn-save">{{moreText[this.sessionService.activeLanguage]}}</div>
+              </div>
+
+              <div>
+                {{this.sessionService.dateLocaleFormat(node.createdAt)}} <span style="cursor: pointer; padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px" class="btn-save"
+                                                                               (click)="addMatTreeNode(node)" mat-raised-button>{{replyText[this.sessionService.activeLanguage]}}</span>
+              </div>
+              <div style="display: none;" id="{{node.name}}">
+                <textarea id="text{{node.name}}" maxlength="250" class="tree_textarea"  name="text"></textarea>
+                <div style="display: none" id="error{{node.name}}" class="errorText">
+                  <small  class="form-text">{{insertText[this.sessionService.activeLanguage]}}</small>
+                </div>
+                <div>
+                  <div style="display: inline-block;" (click)="saveMatTreeNode(node)" class="btn-save">{{saveText[this.sessionService.activeLanguage]}}</div>
+                  <!--<div style="padding-left: 30px">&nbsp;&nbsp;</div>-->
+                  <div style="display: inline-block;" (click)="closeMatTreeNode(node)"  class="btn-close">{{closeText[this.sessionService.activeLanguage]}}</div>
+                </div>
+              </div>
+
+            </div>
+            <!--<button style="width: 100px" class="save-changes-btn submit_btn validate_text" (click)="addMatTreeNode(node)" mat-raised-button>-->
+            <!--Reply-->
+            <!--</button>-->
+          </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+          <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'toggle ' + node.name">
+              <mat-icon (click)="treeNodeExpanded(node)" class="mat-icon-rtl-mirror">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </button>
+            <div>
+                                              <span *ngIf="node.level === 0">
+                                              <ngb-rating [(rate)]="node.rating" [max]="5" [readonly]="readonly">
+                                                <ng-template let-fill="fill" let-index="index">
+                                                  <span class="star_list" [class.filled]="fill === 100"
+                                                        [class.bad]="index < 5">&#9733;</span>
+                                                </ng-template>
+                                              </ngb-rating>
+                                            </span><span class="name_text" style="padding-left: 10px"> {{node.firstname}} {{node.surname}}</span>
+
+              <div id="more{{node.name}}" class="size">
+                {{node.description}}
+                <div *ngIf="node.description.length > 40" id="morebtn{{node.name}}" (click)="moreTreeNode(node)" class="btn-save">{{moreText[this.sessionService.activeLanguage]}}</div>
+              </div>
+              <div>
+                {{this.sessionService.dateLocaleFormat(node.createdAt)}} <div style="display: inline-block;" class="btn-save"
+                                                                              (click)="addMatTreeNode(node)" mat-raised-button>{{replyText[this.sessionService.activeLanguage]}}</div>
+              </div>
+              <div style="display: none" id="{{node.name}}">
+                <textarea  id="text{{node.name}}" maxlength="250" class="tree_textarea"  name="text"></textarea>
+                <div style="display: none" id="error{{node.name}}" class="errorText">
+                  <small  class="form-text">{{insertText[this.sessionService.activeLanguage]}}</small>
+                </div>
+                <div>
+                  <div style="display: inline-block;" (click)="saveMatTreeNode(node)" class="btn-save">{{saveText[this.sessionService.activeLanguage]}}</div>
+                  <!--<div style="padding-left: 30px">&nbsp;&nbsp;</div>-->
+                  <div style="display: inline-block;" (click)="closeMatTreeNode(node)"  class="btn-close">{{closeText[this.sessionService.activeLanguage]}}</div>
+                </div>
+              </div>
+            </div>
+
+          </mat-tree-node>
+
+        </mat-tree>
+
+        <div  style="margin-top: 5px;" class="row">
+          <app-page-navigation style="width: 100%"
+                               [pageSize]="pageSize"
+                               [isMobile]="isMobile"
+                               (pageEvent)="pageEvent($event)">
+          </app-page-navigation>
+        </div>
+        <!--end pagination-->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.mat-select {
+  border: 1px solid #B7EBA1 !important;
+  border-radius: .800rem;
+  font-family: Montserrat;
+  font-size: 16px !important;
+  background-color:#B7EBA1 !important;
+  width: 315px;
+  /*height: 35px;*/
+}
+.selected_mat {
+  text-align: left !important;
+  background-color:#B7EBA1 !important;
+  height: 40px !important;
+}
+
+.mat-select-trigger {
+  padding-top: 5px !important;
+  /*padding-bottom: 5px !important;*/
+  /*height: 35px !important;*/
+
+}
+
+@media (max-width: 1024px) {
+  .mat-select {
+    width: 555px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mat-select {
+    width: 285px;
+  }
+}
+

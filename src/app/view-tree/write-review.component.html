@@ -1,0 +1,80 @@
+<div>
+  <div class="headDialogWriteReview">
+    <button style="float: right"  mat-icon-button mat-dialog-close>
+      <!--<i class="close_img"></i>-->
+      <mat-icon>clear</mat-icon>
+    </button>
+    <div class="centerHeadDialogConfirmation">{{data.title}}</div>
+
+  </div>
+  <div class="csMainDialogWriteReview">
+    <h2 *ngIf="data.details" class="display-4 settings-head">
+      {{data.details}}</h2>
+
+    <form novalidate (ngSubmit)="onSubmit(settingsFrm)"  [formGroup]="settingsFrm">
+
+
+      <div class="row invoice-info">
+        <div class="col-12 mt-1">
+          <div class="mb-1 text-center">
+            <ngb-rating [(rate)]="currentRate" [max]="5">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 5">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+            <hr style="background-color: #464D5C">
+            <pre>{{rateText[this.sessionService.activeLanguage]}} <b>{{currentRate}}</b></pre>
+            <div *ngIf="errorRate" class="errorText">
+              <small  class="form-text">Select rating.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row invoice-info">
+
+        <div class="col-12 mt-1">
+          <div class="mb-1">
+            <div class="form-group">
+              <textarea class="form-control input_txt input-st" rows="4" maxlength="250" placeholder="{{descriptionText[this.sessionService.activeLanguage]}}" formControlName="description"></textarea>
+              <!--<div-->
+              <!--*ngIf="settingsFrm.controls['description'].invalid && (settingsFrm.controls['description'].dirty || settingsFrm.controls['description'].touched)"-->
+              <!--class="errorText">-->
+              <!--<small *ngIf="settingsFrm.controls['description'].errors.required" class="form-text">Surname is required.</small>-->
+              <!--</div>-->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!--<div class="row align-items-center">-->
+        <!--<div style="padding-bottom: 10px;padding-top: 20px;" class="col-md-12  text-center">-->
+          <!--<div class="form-group">-->
+            <!--<button type="submit" value="submit"  [disabled]="this.currentRate === 0" class="btn submit_btn save_text" style="width:45%;" mat-button [mat-dialog-close]="true">{{publishText[this.sessionService.activeLanguage]}}</button>-->
+            <!--<span style="color: #FFFFFF">77777</span>-->
+            <!--<button   style="width:40%;" class="btn submit_btn save_text" mat-button mat-dialog-close cdkFocusInitial>{{closeText[this.sessionService.activeLanguage]}}</button>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <div style="padding-bottom: 30px;padding-top: 20px;" class="row align-items-center">
+        <div style="text-align: center" class="col-xl-6 col-lg-12 col-12">
+          <div class="form-group">
+          <button type="submit" value="submit"  [disabled]="this.currentRate === 0" class="btn submit_btn save_text" style="width:180px;" mat-button [mat-dialog-close]="true">{{publishText[this.sessionService.activeLanguage]}}</button>
+          </div>
+        </div>
+        <div style="text-align: center" class="col-xl-6 col-lg-12 col-12">
+             <div class="form-group">
+              <button  style="width: 150px"  class="btn submit_btn save_text" mat-button mat-dialog-close cdkFocusInitial>{{closeText[this.sessionService.activeLanguage]}}</button>
+             </div>
+        </div>
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
+<app-messages></app-messages>

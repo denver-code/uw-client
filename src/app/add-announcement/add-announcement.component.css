@@ -1,0 +1,111 @@
+.container_client {
+  max-width: 800px !important;
+  padding-top: 67px;
+}
+
+.card-main {
+  background-color:#272E48;
+  border-radius:.267rem;
+  padding-top: 35px;
+  margin-top: 5px;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.settings-head{
+  text-align: center;
+  color: #8A99B5;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+
+.input_txt{
+  background-color:#1A233A;
+  font-family: Montserrat;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 327px;
+}
+.refill_funds_text{
+  background: #464D5C;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 327px;
+  height: 49px;
+  cursor: pointer;
+}
+
+
+.mat-select {
+  border: 1px solid #464D5C !important;
+  border-radius: .25rem;
+  font-family: Montserrat;
+  width: 315px;
+  height: 35px;
+}
+
+@media (max-width: 600px) {
+  .mat-select {
+    border: 1px solid #ffffff !important;
+    border-radius: .25rem;
+    font-family: Montserrat;
+    width: 115px;
+    height: 32px;
+  }
+  .save_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+  .refill_funds_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+
+}
+

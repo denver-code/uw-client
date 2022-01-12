@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-4 col-12 px-0">
+    <div (click)="notification()" [className]="tabIndex == 1 ? 'personal-btn personal-activ notification_mob' : 'personal-btn notification_mob'" mat-raised-button>
+      <i class="my_requests"></i>
+      {{myRequestsText[this.sessionService.activeLanguage]}}
+    </div>
+  </div>
+  <div class="col-sm-4 col-12 px-0">
+    <div (click)="personalData()" [className]="tabIndex == 2 ? 'personal-btn personal-activ personal_mob' : 'personal-btn personal_mob'"  mat-raised-button>
+      <i class="mask_group"></i>
+      {{personalDataText[this.sessionService.activeLanguage]}}
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-12 px-0">
+    <div (click)="myChats()" [className]="tabIndex == 3 ? 'personal-btn personal-activ chats_mob' : 'personal-btn chats_mob'" mat-raised-button>
+      <i class="my_chats"></i>
+      {{myChatsText[this.sessionService.activeLanguage]}}
+    </div>
+  </div>
+</div>

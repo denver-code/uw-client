@@ -1,0 +1,424 @@
+<section>
+  <app-nav-bar-main (navEvent)="navEvent($event)"></app-nav-bar-main>
+  <form novalidate (ngSubmit)="onSubmit(editProfileFrm)" [formGroup]="editProfileFrm">
+    <div class="container container_client">
+
+      <section class="page-user-profile">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-lg-10">
+                <div style="color: #FFFFFF" class="row px-3">
+                  <div class="col-sm-8 col-12">
+                    <div class="row">
+                      <div class="col-12 px-3">
+                        <app-custom-menu [tabIndex]="tabIndex"></app-custom-menu>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-4 col-12 px-0">
+
+                  </div>
+                </div>
+                <div class="row mob_body">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <div class="col-12 px-3">
+
+                        <div class="row">
+                          <div style="padding-top: 16px;"
+                               class="col-xl-12 col-lg-12 col-12">
+                            <div style="border-radius: 10px" class="card text-center card_body px-0 pb-0">
+                              <div style="margin-top: 30px;margin-bottom: 30px;" class="card-content">
+                                <div  class="card-body px-0 pb-0">
+                                  <div style="color: #4D4D4D;">
+                                    <!--Name Surname-->
+                                    <div class="row">
+                                      <div class="col-12 px-0 pb-0">
+                                        <div style="border-bottom: 2px solid #F1F2F7;" class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{nameText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <input type="text" maxlength="45" class="form-control input_st input-st"  name="name"
+                                                           placeholder="{{nameText[this.sessionService.activeLanguage]}}" formControlName="Name">
+                                                    <div
+                                                      *ngIf="editProfileFrm.controls['Name'].invalid && (editProfileFrm.controls['Name'].dirty || editProfileFrm.controls['Name'].touched)"
+                                                      class="errorText">
+                                                      <small *ngIf="editProfileFrm.controls['Name'].errors.required" class="form-text">{{nameRequiredText[this.sessionService.activeLanguage]}}</small>
+                                                      <small *ngIf="editProfileFrm.controls['Name'].errors.Name && !editProfileFrm.controls['Name'].errors.required" class="form-text">{{nameRequiredText[this.sessionService.activeLanguage]}}</small>
+                                                    </div>
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading text-left">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{surnameText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group surname_input">
+                                                    <input type="text" maxlength="45" class="form-control input_st input-st" name="name" placeholder="Surname"
+                                                           formControlName="Surname">
+                                                    <div
+                                                      *ngIf="editProfileFrm.controls['Surname'].invalid && (editProfileFrm.controls['Surname'].dirty || editProfileFrm.controls['Surname'].touched)"
+                                                      class="errorText">
+                                                      <small *ngIf="editProfileFrm.controls['Surname'].errors.required" class="form-text">{{surnameRequiredText[this.sessionService.activeLanguage]}}</small>
+                                                      <small *ngIf="editProfileFrm.controls['Surname'].errors.Name && !editProfileFrm.controls['Surname'].errors.required" class="form-text">{{surnameRequiredText[this.sessionService.activeLanguage]}}</small>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!--E-mail Date of birth-->
+                                    <div class="row">
+                                      <div class="col-12 px-0 pb-0">
+                                        <div style="padding-top: 15px" class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{emailText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group">
+                                                    <input type="text" maxlength="45" class="form-control input_st input-st" name="name" placeholder="Email Address"
+                                                           formControlName="emailAddress">
+                                                    <div
+                                                      *ngIf="editProfileFrm.controls['emailAddress'].invalid && (editProfileFrm.controls['emailAddress'].dirty || editProfileFrm.controls['emailAddress'].touched)"
+                                                      class="errorText">
+                                                      <small *ngIf="editProfileFrm.controls['emailAddress'].errors.required" class="form-text">{{emailRequiredText[this.sessionService.activeLanguage]}}
+                                                      </small>
+                                                      <small *ngIf="editProfileFrm.controls['emailAddress'].errors.email" class="form-text">
+                                                        {{invalidEmailFormatText[this.sessionService.activeLanguage]}}
+                                                      </small>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{dateBirthText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group dateOfBirth_input">
+                                                    <mat-form-field class="field-datepicker">
+                                                      <input  id="fromMatDp1" matInput [matDatepicker]="fromDp1"
+                                                              class="form-control date_inp"
+                                                              [formControl]="date" (click)="fromDp1.open()"
+                                                              (dateChange)="DatepickerEvent('fromMatDp1', $event)">
+                                                      <mat-datepicker-toggle matSuffix [for]="fromDp1">
+                                                        <mat-icon style="margin-left: -50px;font-size: 22px;" matDatepickerToggleIcon>arrow_drop_down</mat-icon>
+                                                      </mat-datepicker-toggle>
+                                                      <mat-datepicker #fromDp1></mat-datepicker>
+                                                    </mat-form-field>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!--Gender Phone number-->
+                                    <div class="row">
+                                      <div class="col-12 px-0 pb-0">
+                                        <div  class="row">
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div  class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{genderText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div  class="form-group gender">
+                                                    <mat-form-field>
+                                                      <mat-select class="selected_mat" [(value)]="selectedGender">
+                                                        <mat-option *ngFor="let gender of genderList" [value]="gender.id">
+                                                          {{gender[this.sessionService.activeLanguage]}}
+                                                        </mat-option>
+                                                      </mat-select>
+                                                    </mat-form-field>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                          <div class="col-xl-6 col-lg-12 col-12 px-0">
+                                            <div class="row invoice-info">
+                                              <div class="col-xl-4 col-lg-12 col-12 mt-1">
+                                                <div class="form-group panel-heading">
+                                                  <div class="head-text">
+                                                    <span class="se_text">{{phoneNumberText[this.sessionService.activeLanguage]}}</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-xl-8 col-lg-12 col-12 mt-1">
+                                                <div class="mb-1">
+                                                  <div class="form-group mobilePhone_input">
+                                                    <input type="text" maxlength="45" class="form-control input_st input-st" name="name" placeholder="{{phoneNumberText[this.sessionService.activeLanguage]}}"
+                                                           formControlName="MobilePhone">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-xl-6 col-lg-12 col-12">
+                            <div class="row">
+                              <div style="padding-top: 16px;" class="col-12 px-3">
+                                <div style="border-radius: 10px" class="card text-center card_body">
+                                  <div style="margin-top: 30px;margin-bottom: 30px;" class="row">
+                                    <div class="col-12">
+                                      <!--skype-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont skype">
+                                              <span class="se_text">{{skypeText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div  class="form-group skype_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Skype"
+                                                   formControlName="Skype">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- end skype-->
+                                      <!--Facebook-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont facebook">
+                                              <span  class="se_text">{{facebookText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                            <div  class="form-group facebook_input">
+                                              <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Facebook"
+                                                     formControlName="Facebook">
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <!--end Facebook-->
+                                      <!--Twitter-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont twitter">
+                                              <span class="se_text">{{twitterText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div  class="form-group twitter_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Twitter"
+                                                   formControlName="Twitter">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--end Twitter-->
+                                      <!--LinkedIn-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont linkedIn">
+                                              <span class="se_text">{{linkedInText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div  class="form-group linkedIn_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="LinkedIn"
+                                                   formControlName="LinkedIn">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--end LinkedIn-->
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-6 col-lg-12 col-12">
+                            <div class="row">
+                              <div style="padding-top: 16px;" class="col-12 px-3">
+                                <div style="border-radius: 10px" class="card text-center card_body">
+                                  <div style="margin-top: 30px;margin-bottom: 30px;" class="row">
+                                    <div class="col-12">
+                                      <!--Telegram-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont telegram">
+                                              <span class="se_text">{{telegramText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div class="form-group telegram_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Telegram"
+                                                   formControlName="Telegram">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--End Telegram-->
+                                      <!--Instagram-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont tnstagram">
+                                              <span class="se_text">{{instagramText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div class="form-group instagram_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Instagram"
+                                                   formControlName="Instagram">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--End Instagram-->
+                                      <!--Viber-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div class="head-text-cont viber">
+                                              <span class="se_text">{{viberText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div class="form-group viber_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="Viber"
+                                                   formControlName="Viber">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--End Viber-->
+                                      <!--WhatsApp-->
+                                      <div  class="row px-0">
+                                        <div  class="col-xl-4 col-lg-12 col-12 mt-0">
+                                          <div class="form-group">
+                                            <div  class="head-text-cont whatsApp">
+                                              <span class="se_text">{{whatsAppText[this.sessionService.activeLanguage]}}</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div  class="col-xl-8 col-lg-12 col-12 mt-0">
+                                          <div class="form-group whatsApp_input">
+                                            <input type="text" maxlength="200" class="form-control input_st input-st" name="name" placeholder="WhatsApp"
+                                                   formControlName="WhatsApp">
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--End WhatsApp-->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row save-changes">
+                  <button type="submit" value="submit" [disabled]="editProfileFrm.invalid"
+                                     class="btn save-changes-btn submit_btn validate_text">{{saveChangesText[this.sessionService.activeLanguage]}}
+                </button>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="row ads_body">
+                  <div  class="col-12 text-center ads_text">
+                    Ads
+                  </div>
+                </div>
+                <div  class="row ads_body">
+                  <div  class="col-12 text-center ads_text">
+                    Ads
+                  </div>
+                </div>
+
+                <div  class="row ads_body">
+                  <div  class="col-12 text-center ads_text">
+                    Ads
+                  </div>
+                </div>
+
+                <div  class="row ads_body">
+                  <div  class="col-12 text-center ads_text">
+                    Ads
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+  </form>
+</section>
+<app-messages></app-messages>

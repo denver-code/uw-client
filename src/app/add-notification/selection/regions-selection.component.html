@@ -1,0 +1,16 @@
+<mat-form-field>
+  <mat-select [disabled]="disableSelect.value" [formControl]="regionCtrl" (selectionChange)="regionsChange($event)"  placeholder="" #singleSelect>
+    <mat-option>
+      <ngx-mat-select-search class="input_st"
+                             placeholderLabel="{{findRegionText[this.sessionService.activeLanguage]}}"
+                             noEntriesFoundLabel = "{{noEntriesFoundLabelText[this.sessionService.activeLanguage]}}"
+                             [formControl]="regionFilterCtrl">
+
+      </ngx-mat-select-search>
+    </mat-option>
+
+    <mat-option *ngFor="let coun of filteredCountrys | async" [value]="coun">
+      {{coun.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,0 +1,200 @@
+.container_client {
+  max-width: 1350px !important;
+  padding-top: 67px;
+}
+
+.card-main {
+  background-color:#FFFFFF;
+  border-radius:10px;
+  padding-top: 35px;
+  margin-top: 5px;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.settings-head{
+  text-align: center;
+  color: #8A99B5;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+
+.input_txt{
+  background-color:#1A233A;
+  font-family: Montserrat;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px !important;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 200px;
+}
+.refill_funds_text{
+  background: #464D5C;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 327px;
+  height: 49px;
+  cursor: pointer;
+}
+
+
+.mat-select {
+  border: 1px solid #B7EBA1 !important;
+  border-radius: .800rem;
+  font-family: Montserrat;
+  width: 315px;
+  height: 35px;
+}
+.selected_mat {
+  text-align: left !important;
+  background-color:#B7EBA1 !important;
+  height: 40px !important;
+}
+
+
+
+.input_st{
+  background: #B7EBA1;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 22px;
+  /*margin-right: 20px;*/
+  /*width: 655px;*/
+}
+
+.se_text {
+  color: #4D4D4D;
+  font-size: 18px;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-align: left;
+}
+#nName {
+  width: 315px;
+}
+.date_txt {
+  padding-right: 260px;
+}
+.city_txt {
+  text-align: right;
+  padding-right: 45px;
+}
+.region_txt {
+  text-align: right;
+}
+.country_txt {
+  text-align: right;
+}
+.description {
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  #nName {
+    width: 555px;
+  }
+  .date_txt {
+    padding-right: 0px;
+  }
+  .country_txt {
+    text-align: left;
+  }
+  .city_txt {
+    text-align: left;
+    padding-right: 0px;
+  }
+  .region_txt {
+    text-align: left;
+  }
+  .description {
+    width: 555px;
+  }
+}
+@media (max-width: 600px){
+  #nName {
+    width: 280px;
+  }
+  .date_txt {
+    padding-right: 0px;
+  }
+  .country_txt {
+    text-align: left;
+  }
+  .city_txt {
+    text-align: left;
+    padding-right: 0px;
+  }
+  .region_txt {
+    text-align: left;
+  }
+  /*.mat-select {*/
+    /*border: 1px solid #ffffff !important;*/
+    /*border-radius: .25rem;*/
+    /*font-family: Montserrat;*/
+    /*width: 115px;*/
+    /*!*height: 32px;*!*/
+  /*}*/
+  .save_text{
+    /*font-family: Montserrat;*/
+    /*font-style: normal;*/
+    /*font-weight: 500;*/
+    /*font-size: 16px;*/
+    /*line-height: 20px;*/
+    /*align-items: center;*/
+    /*text-align: center;*/
+    /*color: #FFFFFF;*/
+    width: 200px;
+  }
+  .refill_funds_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+  .description {
+    width: 280px;
+  }
+
+}
+
+
+

@@ -1,0 +1,26 @@
+#upload {
+  width: 100%;
+  color: #8A99B5;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px !important;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 200px;
+}
+
+@media (max-width: 600px) {
+  #upload {
+    width: 200px;
+    color: #8A99B5;
+  }
+  .submit_btn {
+    width: 264px !important;
+  }
+}

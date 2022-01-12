@@ -1,0 +1,64 @@
+.personal-btn {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  background-color: #F99D47;
+  color: #2D2D2D;
+  width: 220px;
+  height: 49px;
+  display: inline-block;
+  /*background-image: linear-gradient(to right, #4dabff 0%, #62ddff 48%, #4dabff 100%);*/
+  background-size: 200% auto;
+  padding: 0px 0px;
+  border-radius: 7px !important;
+  /*border-radius: 5px;*/
+  outline: none !important;
+  box-shadow: none !important;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 8px;
+}
+
+.personal-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.personal-activ {
+  background-color: #FFFFFF !important;
+}
+.personal_mob {
+  padding-left: 0px;
+}
+.notification_mob {
+  padding-left: 0px;
+}
+.chats_mob {
+  padding-left: 0px;
+}
+@media (max-width: 1024px) {
+  .personal-btn {
+    width: 140px;
+    height: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .personal-btn {
+    width: 250px;
+    height: 49px;
+    text-align: left;
+  }
+  .personal_mob {
+    padding-left: 5px;
+    width: 100%;
+  }
+  .notification_mob {
+    padding-left: 20px;
+    width: 100%;
+  }
+  .chats_mob {
+    padding-left: 40px;
+    width: 100%;
+  }
+}
+

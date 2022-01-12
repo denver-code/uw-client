@@ -1,0 +1,53 @@
+.mat-dialog-container{
+  padding: 0px !important;
+  border: 1px solid grey;
+}
+.csMainDialogConfirmation{
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /*border: 1px solid #cccccc;*/
+  /*border-top: 1px solid #cccccc;*/
+  width:100%;
+  /*padding-left: 130px;*/
+  /*background-color: #cccccc !important;*/
+  background-color: #298D47;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #FFFFFF;
+
+}
+
+.headDialogConfirmation{
+  font-weight:bold;
+  background-color: #298D47;
+  /*border-top: 1px solid #cccccc;*/
+}
+.centerHeadDialogConfirmation {
+  margin: auto;
+  width: 50%;
+  /*border: 1px solid green;*/
+  padding: 10px;
+  padding-left: 0px;
+  height: 40px;
+}
+
+.dialog_btn {
+  width:100%;
+  padding-top: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}

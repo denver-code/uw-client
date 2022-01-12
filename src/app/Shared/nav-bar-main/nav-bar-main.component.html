@@ -1,0 +1,210 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <div class="container">
+    <a class="navbar-brand"><i class="Logo" (click)="SetHome()"></i></a>
+
+    <div class="mob_lan">
+      <div
+        *ngIf="
+          !sessionService.getPermission(sessionService.permission.getService) &&
+          !sessionService.getPermission(sessionService.permission.provider)
+        "
+        class="invoice-action-btn"
+      >
+        <div class="provide_service validate_text" (click)="provideService()">
+          <div
+            class="sizeButton"
+            title="{{ buttonProvide[this.sessionService.activeLanguage] }}"
+          >
+            {{ buttonProvide[this.sessionService.activeLanguage] }}
+          </div>
+        </div>
+      </div>
+      <div class="link_a_activ plMenuCSS" mat-button [matMenuTriggerFor]="menu">
+        <span class="language" style="padding-left: 5px">{{ lan }}</span>
+        <i class="Dw"></i>
+      </div>
+      <mat-menu #menu="matMenu">
+        <div mat-menu-item (click)="Setlanguage('EN')">
+          <div class="plMenuCSS">EN (English)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('RU')">
+          <div class="plMenuCSS">RU (Russian)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('ZN')">
+          <div class="plMenuCSS">ZN (Chineese)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('ES')">
+          <div class="plMenuCSS">ES (Spanish)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('FR')">
+          <div class="plMenuCSS">FR (French)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('HI')">
+          <div class="plMenuCSS">HI (Hindi)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('PT')">
+          <div class="plMenuCSS">PT (Portuguese)</div>
+        </div>
+        <div mat-menu-item (click)="Setlanguage('DE')">
+          <div class="plMenuCSS">DE (Deutsch)</div>
+        </div>
+      </mat-menu>
+    </div>
+    <button
+      *ngIf="sessionService.IsAuthenicated"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <!--<li class="link_a_activ plMenuCSS">-->
+        <!--<div class="language" (click)="ServiceHome()" style="padding-left: 5px;padding-right: 0px; margin-top: 8px;cursor: pointer" *ngIf="sessionService.getPermission(sessionService.permission.provider)">{{homeText[lan]}}</div>-->
+        <!--</li>-->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            style="cursor: pointer"
+            routerLinkActive="link_a_activ"
+            *ngIf="
+              sessionService.getPermission(sessionService.permission.getService)
+            "
+            (click)="WriteUs()"
+            >{{ menuHelp[lan] }}</a
+          >
+          <a
+            class="nav-link"
+            style="cursor: pointer"
+            routerLinkActive="link_a_activ"
+            *ngIf="
+              sessionService.getPermission(sessionService.permission.provider)
+            "
+            (click)="WriteUsProvider()"
+            >{{ menuHelp[lan] }}</a
+          >
+        </li>
+
+        <!--<li class="link_a_activ plMenuCSS">-->
+        <!--<div class="language" (click)="ViewProvideProfile()" style="padding-left: 5px;padding-right: 20px; margin-top: 8px;cursor: pointer" *ngIf="sessionService.getPermission(sessionService.permission.provider)">{{profileText[lan]}}</div>-->
+        <!--</li>-->
+
+        <div class="win_lan">
+          <div
+            *ngIf="
+              !sessionService.getPermission(
+                sessionService.permission.getService
+              ) &&
+              !sessionService.getPermission(sessionService.permission.provider)
+            "
+            class="invoice-action-btn"
+          >
+            <div
+              class="provide_service validate_text"
+              (click)="provideService()"
+            >
+              <div
+                class="sizeButton"
+                title="{{ buttonProvide[this.sessionService.activeLanguage] }}"
+              >
+                {{ buttonProvide[this.sessionService.activeLanguage] }}
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="link_a_activ plMenuCSS"
+            mat-button
+            [matMenuTriggerFor]="menu"
+          >
+            <span class="language" style="padding-left: 5px">{{ lan }}</span>
+            <i class="Dw"></i>
+          </div>
+          <mat-menu #menu="matMenu">
+            <div mat-menu-item (click)="Setlanguage('EN')">
+              <div class="plMenuCSS">EN (English)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('RU')">
+              <div class="plMenuCSS">RU (Russian)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('ZN')">
+              <div class="plMenuCSS">ZN (Chineese)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('ES')">
+              <div class="plMenuCSS">ES (Spanish)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('FR')">
+              <div class="plMenuCSS">FR (French)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('HI')">
+              <div class="plMenuCSS">HI (Hindi)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('PT')">
+              <div class="plMenuCSS">PT (Portuguese)</div>
+            </div>
+            <div mat-menu-item (click)="Setlanguage('DE')">
+              <div class="plMenuCSS">DE (Deutsch)</div>
+            </div>
+          </mat-menu>
+        </div>
+
+        <div
+          *ngIf="
+            sessionService.getPermission(sessionService.permission.provider)
+          "
+          class="link_a_activ"
+        >
+          <span
+            (click)="ViewProvideProfile()"
+            class="nav-link userMenuCSS language"
+            >{{ sessionService.AuthorizedUser.EmailAddress }}</span
+          >
+        </div>
+        <div
+          *ngIf="
+            sessionService.getPermission(sessionService.permission.getService)
+          "
+          class="link_a_activ"
+        >
+          <span (click)="EditProfile()" class="nav-link userMenuCSS language">{{
+            sessionService.AuthorizedUser.EmailAddress
+          }}</span>
+        </div>
+
+        <!--<div *ngIf="sessionService.IsAuthenicated" class="link_a_activ" mat-button [matMenuTriggerFor]="userMenu">-->
+        <!--<span class="nav-link userMenuCSS language">{{sessionService.AuthorizedUser.EmailAddress}}<i class="Dw"></i></span>-->
+
+        <!--<mat-menu #userMenu="matMenu"   yPosition="below">-->
+
+        <!--<div mat-menu-item *ngIf="sessionService.getPermission(sessionService.permission.getService)" (click)="EditProfile()"><div class="plMenuCSS">{{profileText[lan]}}</div></div>-->
+
+        <!--<div mat-menu-item *ngIf="sessionService.getPermission(sessionService.permission.provider)" (click)="ProviderChats()"><div class="plMenuCSS">{{myChatsText[lan]}}</div>-->
+
+        <!--</div>-->
+
+        <!--</mat-menu>-->
+
+        <!--</div>-->
+        <li class="link_a_activ plMenuCSS">
+          <div
+            class="language nav-link"
+            (click)="logoutClick()"
+            style="cursor: pointer"
+            *ngIf="
+              sessionService.getPermission(
+                sessionService.permission.provider_getService
+              )
+            "
+          >
+            {{ menuLogOut[lan] }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

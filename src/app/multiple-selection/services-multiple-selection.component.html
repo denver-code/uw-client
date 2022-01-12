@@ -1,0 +1,35 @@
+<div class="text-left">
+<mat-form-field>
+  <mat-select [formControl]="bankMultiCtrl" (selectionChange)="servicesChange($event)" placeholder="" [multiple]="true" #multiSelect>
+    <ngx-mat-select-search  placeholderLabel="{{findServicesText[this.sessionService.activeLanguage]}}"
+                            noEntriesFoundLabel = "{{noEntriesFoundLabelText[this.sessionService.activeLanguage]}}"
+                            [formControl]="bankMultiFilterCtrl"></ngx-mat-select-search>
+    <mat-option *ngFor="let bank of filteredBanksMulti | async" [value]="bank">
+      <span style="white-space: pre-line;">{{bank['name'+this.sessionService.activeLanguage]}}</span>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div class="selected_services">
+
+  <h6 class="service_text">{{selectedServicesText[this.sessionService.activeLanguage]}}</h6>
+
+  <div style="overflow: auto">
+    <ul style="margin-right: 0px; margin-left: 0px;" class="list-group list-group-flush">
+      <li *ngFor="let typeService of bankMultiCtrl?.value; let j = index"
+          class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between expenses_item">
+
+        <div class="list-left d-flex">
+
+          <div>
+            <div  class="list_column">{{typeService['name'+this.sessionService.activeLanguage]}}</div>
+          </div>
+
+        </div>
+
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+</div>

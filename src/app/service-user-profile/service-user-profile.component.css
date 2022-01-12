@@ -1,0 +1,158 @@
+.container_client {
+  max-width: 800px !important;
+  padding-top: 67px;
+}
+
+.card-main {
+  background-color:#272E48;
+  border-radius:.267rem;
+  padding-top: 35px;
+  margin-top: 5px;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.settings-head{
+  text-align: center;
+  color: #8A99B5;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+
+.input_txt{
+  background-color:#1A233A;
+  font-family: Montserrat;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 350px;
+}
+
+.gift {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: #ffa600;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #ffa600;
+}
+/*.d-inline-flex {*/
+/*background-color: white;*/
+/*}*/
+pre {
+  display: block;
+  font-size: 87.5%;
+  color: #ffffff;
+}
+
+.star {
+  font-size: 4.5rem;
+  color: #b0c4de;
+}
+.star_list {
+  font-size: 1.5rem;
+  color: #b0c4de;
+}
+.filled {
+  color: #1e90ff;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+.service_text {
+  color: #8A99B5;
+}
+@media (max-width: 600px) {
+  .card-content{
+    /*background-color:#272E48;*/
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  .save_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+
+}
+
+.expenses_item{
+  background: #343B53;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: Montserrat;
+  border-bottom:4px solid #272E48 !important;
+}
+
+.history_requests_number_row {
+  text-align: left;
+  margin-top: 10px;
+  /*width: 180px;*/
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.list_column {
+  font-family: Montserrat;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 14px;
+  opacity:0.5;
+  color: #FFFFFF;
+}
+

@@ -1,0 +1,51 @@
+<div style="float: left;padding-right: 0px">
+  <mat-form-field>
+    <mat-select [formControl]="cityMultiCtrl" (selectionChange)="citiesChange($event)" placeholder="" [multiple]="true" #multiSelect>
+      <ngx-mat-select-search placeholderLabel="Find cities..."
+                             noEntriesFoundLabel = "{{noEntriesFoundLabelText[this.sessionService.activeLanguage]}}"
+                             [formControl]="cityMultiFilterCtrl"></ngx-mat-select-search>
+      <mat-option *ngFor="let bank of filteredCitiesMulti | async" [value]="bank">
+        {{bank.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="selected_cities">
+  <h6 class="service_text">{{selectedCitiesText[this.sessionService.activeLanguage]}}</h6>
+  <!--<ul *ngFor="let country of bankMultiCtrl?.value">-->
+  <!--<li>{{country.name}}</li>-->
+  <!--</ul>-->
+  <div style="overflow: auto;padding: 0px !important;">
+
+    <ul style="margin-right: 0px; margin-left: 0px;padding: 0px !important;" class="list-group list-group-flush">
+      <li *ngFor="let bank of cityMultiCtrl?.value; let j = index"
+          class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between expenses_item">
+
+        <div class="list-left d-flex">
+          <div class="list-icon mr-2">
+            <div class="avatar bg-rgba-primary m-0">
+              <div class="list-content number_row">
+                {{j+1}}.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div  class="list_column">{{bank.name}}</div>
+          </div>
+
+        </div>
+        <!--<div class="d-flex justify-content-start flex-wrap">-->
+        <!--<div class="list_column">-->
+        <!--{{country.id}}-->
+
+        <!--</div>-->
+        <!--</div>-->
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+<app-messages></app-messages>
+

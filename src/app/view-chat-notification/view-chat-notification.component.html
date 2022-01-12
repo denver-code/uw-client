@@ -1,0 +1,151 @@
+<section>
+  <app-nav-bar-main (navEvent)="navEvent($event)"></app-nav-bar-main>
+  <form novalidate>
+    <div class="container container_client">
+      <div class="card-main">
+        <div style="padding-bottom: 20px" class="card-content">
+
+          <div class="row invoice-info">
+
+
+            <div  class="col-sm-6 col-12 px-0">
+              <div class="row requestTitle_txt">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{requestTitleText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div  class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                        {{notification.name}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row typeService_txt">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{typeServiceText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                        {{selectedTypeServicesName}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mt-1">
+                  <div class="row date_txt">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{dateText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div  class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                          <!--{{notification.createdAt | date}}-->
+                          {{this.sessionService.dateLocaleFormat(notification.createdAt)}}
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-sm-6 col-12 px-0">
+
+              <div class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{countryText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                          {{selectedCountryName}}
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div  class="row region_txt">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{regionText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                          {{selectedRegionName}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-12 mt-1">
+                  <div class="row city_txt">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{cityText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="align-items-center text-body" style="padding-top: 0px;margin-bottom: 18px">
+                          {{selectedCityName}}
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-12 mt-1">
+              <div class="mb-1">
+                <div style="padding-top: 10px"  class="text-body">
+                  {{notification.description}}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div style="padding-bottom: 30px;padding-top: 20px;" class="col-md-12  text-center">
+          <div class="row">
+
+            <div class="col-sm-12 col-12 px-0">
+              <div class="form-group">
+                <button type="submit" value="submit" (click)="CanselAnnouncement()"  class="btn submit_btn save_text">
+                  {{backText[this.sessionService.activeLanguage]}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+<app-messages></app-messages>

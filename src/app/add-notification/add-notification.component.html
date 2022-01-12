@@ -1,0 +1,184 @@
+<section>
+  <app-nav-bar-main (navEvent)="navEvent($event)"></app-nav-bar-main>
+  <form novalidate (ngSubmit)="onSubmit(settingsFrm)" [formGroup]="settingsFrm">
+    <div class="container container_client">
+      <div class="card-main">
+        <div style="padding-bottom: 20px" class="card-content">
+
+          <div class="row invoice-info">
+
+            <div class="col-12 mt-1">
+
+
+            </div>
+            <div class="col-xl-6 col-lg-12 col-12 px-0">
+              <div  class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{requestTitleText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="form-group">
+                          <input  maxlength="100" type="text" class="form-control input_st input-st" id="nName" name="name" placeholder="{{requestNameText[this.sessionService.activeLanguage]}}"
+                                  formControlName="nName">
+                          <div
+                            *ngIf="settingsFrm.controls['nName'].invalid && (settingsFrm.controls['nName'].dirty || settingsFrm.controls['nName'].touched)"
+                            class="errorText">
+                            <small *ngIf="settingsFrm.controls['nName'].errors.required" class="form-text">{{requestTitleRequiredText[this.sessionService.activeLanguage]}}
+                            </small>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span class="se_text">{{typeServiceText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="align-items-center" style="padding-top: 0px;margin-bottom: 18px">
+                        <app-services-selection (selectEvent)="servicesEvent($event)"></app-services-selection>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div  class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div style="text-align: left;" class="col-xl-5 col-lg-12 col-12 mb-1">
+                      <span  class="se_text">{{dateText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div  class="form-group date_txt">
+                          <mat-form-field class="field-datepicker">
+                            <input id="fromMatDp1" matInput [matDatepicker]="fromDp1" class="date_inp"
+                                   [formControl]="date"
+                                   (click)="fromDp1.open()"
+                                   (dateChange)="DatepickerEvent('fromMatDp1', $event)">
+                            <mat-datepicker-toggle matSuffix [for]="fromDp1">
+                              <mat-icon style="margin-left: -50px;margin-bottom: 19px;font-size: 22px;" matDatepickerToggleIcon>arrow_drop_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #fromDp1></mat-datepicker>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-12 px-0">
+              <div class="row">
+
+                <div class="col-12 mt-1">
+
+                  <div class="row">
+                    <div  class="col-xl-5 col-lg-12 col-12 mb-1 country_txt">
+                      <span class="se_text">{{countryText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="align-items-center" style="padding-top: 0px;margin-bottom: 18px">
+
+                          <app-country-selection (selectEvent)="countryEvent($event)"></app-country-selection>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div  class="col-xl-5 col-lg-12 col-12 mb-1 region_txt">
+                      <span class="se_text">{{regionText[this.sessionService.activeLanguage]}}</span>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                      <div class="mb-1">
+                        <div class="align-items-center" style="padding-top: 0px;margin-bottom: 18px">
+                          <app-regions-selection  (selectEvent)="regionsEvent($event)"></app-regions-selection>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+
+                  <div class="col-12 mt-1">
+                    <div class="row">
+                      <div  class="col-xl-5 col-lg-12 col-12 mb-1 city_txt">
+                        <span class="se_text">{{cityText[this.sessionService.activeLanguage]}}</span>
+                      </div>
+                      <div class="col-xl-7 col-lg-12 col-12 mb-1">
+                        <div class="mb-1">
+                          <div class="align-items-center" style="padding-top: 0px;margin-bottom: 18px">
+                            <app-cities-selection (selectEvent)="citiesEvent($event)"></app-cities-selection>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+
+            <div class="col-12 mt-1 px-0">
+              <div class="mb-1">
+                <div style="margin-right: 20px" class="form-group">
+                  <textarea maxlength="500" class="form-control input_st input-st description" rows="4" placeholder="{{descriptionText[this.sessionService.activeLanguage]}}"
+                            formControlName="description"></textarea>
+                  <div
+                    *ngIf="settingsFrm.controls['description'].invalid && (settingsFrm.controls['description'].dirty || settingsFrm.controls['description'].touched)"
+                    class="errorText">
+                    <small *ngIf="settingsFrm.controls['description'].errors.required" class="form-text">{{pleaseDescriptionText[this.sessionService.activeLanguage]}}
+                    </small>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div style="padding-bottom: 30px;padding-top: 20px;" class="col-md-12  text-center">
+          <div class="row">
+            <div class="col-sm-6 col-12 px-0">
+              <div class="form-group">
+                <button type="submit" value="submit" [disabled]="settingsFrm.invalid || selectedCountrys ===-1 || selectedTypeServices === -1" class="btn submit_btn save_text">
+                  {{publishText[this.sessionService.activeLanguage]}}
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12 px-0">
+              <div class="form-group">
+                <button type="submit" value="submit" (click)="CanselAnnouncement()" class="btn submit_btn save_text">
+                  {{cancelText[this.sessionService.activeLanguage]}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+<app-messages></app-messages>

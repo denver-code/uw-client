@@ -1,0 +1,174 @@
+.mat-dialog-container{
+  padding: 0px !important;
+  border: 1px solid grey;
+}
+.csMainDialogWriteReview{
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /*border: 1px solid #cccccc;*/
+  /*border-top: 1px solid #cccccc;*/
+  width:100%;
+  /*padding-left: 130px;*/
+  /*background-color: #cccccc !important;*/
+  background-color: #FFFFFF;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+
+}
+
+.headDialogWriteReview{
+  font-weight:bold;
+  background-color: #F99D47;
+  /*border-top: 1px solid #cccccc;*/
+}
+.centerHeadDialogConfirmation {
+  margin: auto;
+  width: 50%;
+  /*border: 1px solid green;*/
+  padding: 10px;
+  padding-left: 0px;
+  height: 40px;
+}
+
+.dialog_btn {
+  width:100%;
+  padding-top: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.settings-head{
+  text-align: center;
+  color: #8A99B5;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+
+.input_txt{
+  background-color:#FFFFFF;
+  font-family: Montserrat;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px !important;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 350px;
+}
+
+.gift {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: #ffa600;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #ffa600;
+}
+/*.d-inline-flex {*/
+/*background-color: white;*/
+/*}*/
+pre {
+  display: block;
+  font-size: 87.5%;
+  color: #000000;
+}
+
+.star {
+  font-size: 4.5rem;
+  color: #b0c4de;
+}
+.filled {
+  color: #FFFFFF;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+:focus {
+  outline: none !important;
+}
+.mat-icon-button {
+  color: #8A99B5;
+}
+@media (max-width: 1024px) {
+  .csMainDialogWriteReview{
+    overflow: auto;
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .star {
+    font-size: 3.5rem;
+  }
+  .card-content{
+    /*background-color:#272E48;*/
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  .save_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+  .csMainDialogWriteReview{
+    overflow: auto;
+    height: auto;
+  }
+}

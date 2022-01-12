@@ -1,0 +1,46 @@
+<div style="position: relative; left: -15px" class="text-left">
+<div style="float: left;">
+  <mat-form-field>
+    <mat-select [formControl]="bankMultiCtrl" placeholder="" (selectionChange)="countrysChange($event)" [multiple]="true" #multiSelect>
+      <ngx-mat-select-search
+        placeholderLabel="{{findCountryText[this.sessionService.activeLanguage]}}"
+        noEntriesFoundLabel = "{{noEntriesFoundLabelText[this.sessionService.activeLanguage]}}"
+        [formControl]="bankMultiFilterCtrl"></ngx-mat-select-search>
+      <mat-option *ngFor="let bank of filteredBanksMulti | async" [value]="bank">
+        {{bank.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div style="width: 100%">
+  <h6 class="service_text">{{selectedCountriesText[this.sessionService.activeLanguage]}}</h6>
+
+  <div style="overflow: auto;">
+
+    <ul style="margin-right: 0px; margin-left: 0px;" class="list-group list-group-flush">
+      <li *ngFor="let country of bankMultiCtrl?.value; let j = index"
+          class="list-group-item list-group-item-action border-0 d-flex align-items-center justify-content-between expenses_item">
+
+        <div class="list-left d-flex">
+          <div class="list-icon mr-2">
+            <div class="avatar bg-rgba-primary m-0">
+              <div class="list-content number_row">
+                {{j+1}}.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="width: 190px" class="list_column">{{country.name}}</div>
+            <div>
+              <app-regions-multiple-selection [countryId]="country.id"></app-regions-multiple-selection>
+            </div>
+          </div>
+
+        </div>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+</div>

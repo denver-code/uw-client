@@ -1,0 +1,72 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <form novalidate (ngSubmit)="onSubmit(loginFrm)"  [formGroup]="loginFrm">
+  <div  class="container container_client">
+    <div style="padding-bottom: 30px;padding-top: 20px;border-radius: 10px" class="card-main">
+      <div class="card-content">
+
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h2 class="display-4 client-log-in">
+              <div class="sizeHeaderText" title="{{headerText[this.sessionService.activeLanguage]}}">{{headerText[this.sessionService.activeLanguage]}}</div></h2>
+            <div class="form-group">
+              <input type="text" autocomplete="username"  class="form-control input_st input-st" id="clientId" name="name" placeholder="{{emailText[this.sessionService.activeLanguage]}}" formControlName="emailAddress">
+              <div
+                *ngIf="loginFrm.controls['emailAddress'].invalid && (loginFrm.controls['emailAddress'].dirty || loginFrm.controls['emailAddress'].touched)"
+                class="errorText">
+                <small *ngIf="loginFrm.controls['emailAddress'].errors.required" class="form-text">{{emailRequiredText[this.sessionService.activeLanguage]}}</small>
+                <small *ngIf="loginFrm.controls['emailAddress'].errors.email" class="form-text">{{invalidEmailFormatText[this.sessionService.activeLanguage]}}</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="form-group">
+
+              <mat-form-field class="form-field-password" appearance="standard">
+                <input matInput placeholder="{{passwordText[this.sessionService.activeLanguage]}}"  class="input_st" style="padding: .375rem .75rem"  formControlName="password"  [type]="hide ? 'password' : 'text'">
+                <button type="button"  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div
+                *ngIf="loginFrm.controls['password'].invalid && (loginFrm.controls['password'].dirty || loginFrm.controls['password'].touched)"
+                class="errorText">
+                <small *ngIf="loginFrm.controls['password'].errors.required" class="form-text">{{passwordRequiredText[this.sessionService.activeLanguage]}}</small>
+              </div>
+              <div class="servise_text" *ngIf="this.sessionService.getRoleRequest()==='getService'">({{buttonRequest[this.sessionService.activeLanguage]}})</div>
+              <div class="servise_text" *ngIf="this.sessionService.getRoleRequest()==='provider'">({{buttonProvide[this.sessionService.activeLanguage]}})</div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <div style="padding-bottom: 30px;padding-top: 20px;" class="row align-items-center">
+      <div class="col-xl-6 col-lg-12 col-12 butn_mob">
+        <button type="submit" value="submit"  [disabled]="loginFrm.invalid" class="btn submit_btn validate_text">
+          <div class="sizeButtonLogIn" title="{{buttonLogIn[this.sessionService.activeLanguage]}}">
+          {{buttonLogIn[this.sessionService.activeLanguage]}}
+          </div>
+        </button>
+      </div>
+      <div class="col-xl-6 col-lg-12 col-12 butn_mob">
+        <div style="padding-top: 10px"  (click)="signUp()">
+          <div class="butn_mob butnReg"  title="{{buttonRegister[this.sessionService.activeLanguage]}}">
+          {{buttonRegister[this.sessionService.activeLanguage]}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </form>
+</section>
+<app-messages></app-messages>

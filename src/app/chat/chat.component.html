@@ -1,0 +1,129 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <form novalidate>
+    <div class="container container_client">
+      <div class="row align-items-center mob_button">
+        <div style="padding-bottom: 10px;padding-top: 0px;" class="col-md-12  text-center">
+          <div class="row">
+            <div class="col-sm-12 col-12 px-0">
+              <div class="form-group">
+                <button type="submit" value="submit" (click)="backChats()"  class="btn submit_btn save_text">
+                  {{backText[this.sessionService.activeLanguage]}}
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-main">
+        <div style="padding-bottom: 20px" class="card-content">
+
+          <div class="row invoice-info">
+
+
+            <div  class="col-sm-12 col-12 px-0">
+              <div style="padding-left: 15px" class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div class="col-12 mb-1">
+                      <span *ngIf="this.sessionService.AuthorizedUser.RoleName === this.sessionService.permission.provider" title="name" class="se_text">{{interlocutor}}</span>
+                      <a *ngIf="this.sessionService.AuthorizedUser.RoleName === this.sessionService.permission.getService" (click)="getProvider()" class="link">
+                        <div>
+                          {{interlocutor}}<mat-icon style="position: relative;top:6px">arrow_forward</mat-icon>
+                        </div>
+                      </a>
+
+                    </div>
+                    <div class="col-12 mb-1">
+                      <a (click)="notificationLoad()" class="link">{{chat.notification.name}}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="padding-left: 15px" class="row">
+                <div class="col-12 mt-1">
+                  <div class="row">
+                    <div id="mesBody" style="overflow: auto; max-height: 400px" class="col-12 mb-1">
+                      <ul style="margin-right: 0px; margin-left: 0px;padding: 0px !important;" class="list-group list-group-flush">
+                        <li *ngFor="let bank of messagesChat; let j = index"
+                             [attr.load]="chatsLoadRowData(j)" class="list-group-item-action border-0 d-flex align-items-center justify-content-between expenses_item">
+
+                          <div class="list-left d-flex">
+
+                            <div>
+                              <div *ngIf="bank.textType === null" class="list_column">{{bank.name}}: {{bank.content}}</div>
+                              <div *ngIf="bank.textType === 1" class="list_column"><span>{{bank.name}}</span>: <span  [innerHTML]="transformHTML(bank.content)"></span></div>
+                              <div *ngIf="bank.image !== null" class="list_column">
+                                <!--{{bank.name}}-->
+                                <img class="img-max"  [src]="transform(bank.image)">
+                              </div>
+                              <div *ngIf="bank.document !== null" class="list_column">
+                                <!--{{bank.name}}-->
+                                <!--<a [href]="transform(bank.document)"  download="excel.csv">Download</a>-->
+                                <a [href]="'data:application/octet-stream;base64,' + bank.document | safe" download="{{bank.documentName}}">Download ({{bank.documentName}})</a>
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="col-12 mt-1">
+              <div class="mb-1">
+                <div style="padding-top: 10px" class="text-body">
+                  <textarea id="textToSend" class="form-control input_txt input-st" rows="4" maxlength="250" placeholder="{{toSendText[this.sessionService.activeLanguage]}}"></textarea>
+                </div>
+                <div style="padding-top: 10px" class="text-body">
+                  <button (click)="sendMessage()" class="btn submit_btn save_text">{{sendMessageText[this.sessionService.activeLanguage]}}</button>
+                </div>
+                <div style="padding-top: 14px">
+                <app-upload-file (dataEvent)="dataUploadEvent($event)"></app-upload-file>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+        <div *ngIf="agreementBtn" class="card-footer d-flex justify-content-between border-top">
+          <div class="d-flex">
+            <div class="d-inline-flex align-items-center mr-2">
+
+              <button (click)="agreement()" class="btn submit_btn btn_agree">{{agreementText[this.sessionService.activeLanguage]}}</button>
+            </div>
+          </div>
+          <div>
+            <button (click)="renouncement()"  class="btn submit_btn btn_agree">{{renouncementText[this.sessionService.activeLanguage]}}</button>
+          </div>
+        </div>
+        <div *ngIf="chat.agreementProvide === 1 && chat.agreementRequest === 1 && completeBtn" class="card-footer d-flex justify-content-between border-top">
+          <div class="d-flex">
+            <div class="d-inline-flex align-items-center mr-2">
+
+              <button (click)="complete()" class="btn submit_btn btn_agree">{{completeText[this.sessionService.activeLanguage]}}</button>
+            </div>
+          </div>
+          <div>
+            <button (click)="dealCancel()" class="btn submit_btn btn_agree">{{cancelText[this.sessionService.activeLanguage]}}</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</section>
+<app-messages></app-messages>

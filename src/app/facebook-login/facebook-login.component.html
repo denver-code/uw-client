@@ -1,0 +1,30 @@
+<section>
+  <app-nav-bar-main></app-nav-bar-main>
+  <form>
+    <div  class="container container_client">
+      <div class="row">
+        <div class="col-xl-12 col-md-12 col-12">
+
+          <div class="client-log-container mat-elevation-z8">
+            <mat-card class="client-log-card card_body">
+              <mat-card-header>
+                <mat-card-title><h2 class="header_text"><span *ngIf="loggedIn===true">{{user.firstName}} {{user.lastName}} </span></h2></mat-card-title>
+
+                <mat-card-subtitle>
+                  <button style="background-color: #8A99B5; color: #ffffff" type="button" (click)="signInWithFB()" *ngIf="loggedIn===false" mat-flat-button>Sign In With Facebook</button>
+                  <button style="background-color: #8A99B5; color: #ffffff" type="button" (click)="signOut()" *ngIf="loggedIn===true" mat-flat-button>Sign Out From Facebook</button>
+                </mat-card-subtitle>
+              </mat-card-header>
+            </mat-card>
+
+          </div>
+        </div>
+        <div class="col-xl-12 col-md-12 col-12">
+        <span>
+        <img *ngIf="loggedIn===true" class="profilePicThumb" mat-card-image [src]="user.photoUrl" alt="My Facebook Photo">
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

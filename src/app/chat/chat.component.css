@@ -1,0 +1,241 @@
+.container_client {
+  max-width: 1350px !important;
+  padding-top: 35px;
+}
+
+.card-main {
+  background-color:#FFFFFF;
+  border-radius:10px;
+  padding-top: 35px;
+  margin-top: 5px;
+}
+
+.card-content{
+  /*background-color:#272E48;*/
+  margin-bottom: 10px;
+  margin-left: 55px;
+  margin-right: 55px;
+
+}
+
+.settings-head{
+  text-align: center;
+  color: #8A99B5;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+
+.input_txt{
+  background-color:#FFFFFF;
+  font-family: Montserrat;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.save_text{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px !important;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 200px;
+}
+.refill_funds_text{
+  background: #464D5C;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 327px;
+  height: 49px;
+  cursor: pointer;
+}
+
+
+.mat-select {
+  border: 1px solid #B7EBA1 !important;
+  border-radius: .800rem;
+  font-family: Montserrat;
+  width: 315px;
+  height: 35px;
+}
+.selected_mat {
+  text-align: left !important;
+  background-color:#B7EBA1 !important;
+}
+
+.agreement {
+  width: 204px;
+  text-align: center;
+  vertical-align: middle;
+}
+.renouncement {
+  width: 204px;
+  text-align: center;
+  vertical-align: middle;
+}
+.btn_agree {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px !important;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  width: 200px;
+}
+.link {
+  font-family: Montserrat;
+  margin-top: 5px;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  /*opacity:0.5;*/
+  color: #4D4D4D!important;
+}
+.img-max {
+  max-height: 800px;
+  max-width: 920px
+}
+
+@media (max-width: 1024px) {
+  .img-max {
+    max-height: 400px;
+    max-width: 520px
+  }
+}
+
+@media (max-width: 600px) {
+  .img-max {
+    max-height: 300px;
+    max-width: 320px
+  }
+  .container_client {
+    padding-top: 30px;
+  }
+  .card-content{
+    /*background-color:#272E48;*/
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+  .mat-select {
+    border: 1px solid #ffffff !important;
+    border-radius: .25rem;
+    font-family: Montserrat;
+    width: 115px;
+    height: 32px;
+  }
+  .save_text{
+    font-family: Montserrat;
+    font-style: normal;
+    /*font-weight: 500;*/
+    /*font-size: 16px;*/
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+  .refill_funds_text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+  }
+  .btn_agree {
+    font-family: Montserrat;
+    font-style: normal;
+    /*font-weight: 500;*/
+    /*font-size: 12px;*/
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%
+  }
+  .agreement {
+    width: 118px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .renouncement {
+    width: 118px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+}
+.input_st{
+  background: #B7EBA1;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 22px;
+  /*margin-right: 20px;*/
+  /*width: 655px;*/
+}
+
+.se_text {
+  color: #4D4D4D;
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 600;
+  text-align: left;
+}
+.text-body {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #298D47 !important;
+  text-align: left;
+  /*padding-top: 30px*/
+}
+.col {
+  /*background: #f0f0f0; !* Цвет фона *!*/
+  /*width: 230px; !* Ширина блока *!*/
+  /*padding: 10px; !* Поля *!*/
+  /*font-size: 1.5em; !* Размер шрифта *!*/
+  /*word-wrap: break-word; !* Перенос слов *!*/
+  overflow-wrap: normal;  /* не поддерживает IE, Firefox; является копией word-wrap */
+  /*word-wrap: normal;*/
+  word-break: normal;  /* не поддерживает Opera12.14, значение keep-all не поддерживается IE, Chrome */
+  line-break: auto;  /* нет поддержки для русского языка */
+  hyphens: manual;  /* значение auto не поддерживается Chrome */
+  width: 100%;
+  height: 100px;
+  word-wrap: inherit;
+  overflow: auto;
+}

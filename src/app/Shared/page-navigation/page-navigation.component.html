@@ -1,0 +1,79 @@
+<div class="col-sm-12 col-md-12 px-1 py-2 align-items-center">
+  <div style="margin-top: 5px;">
+
+    <ul *ngIf="!isMobile" style="margin: 0px !important;" class="pagination">
+      <li class="paginate_button page-item previous">
+        <button style="padding: 0px!important;" (click)="buttonPreviousPage()" [disabled]="disablePreviousPageButton || (totalPages == 1 && currentPageNumber == 1)" class="btn">
+          <div class="last-triangle">
+            <div tabindex="0" class="page-link">{{previousText[this.sessionService.activeLanguage]}}</div>
+          </div>
+        </button>
+      </li>
+
+      <li *ngIf="!disableNumberPagePrevious" (click)="NumberPagePrevious()" class="paginate_button page-item previous">
+        <div tabindex="0" class="page-link page-dots-text">...</div>
+      </li>
+      <li *ngFor="let linkNam of pageLinks" (click)="buttonNumberPage(linkNam)" class="paginate_button page-item" [ngClass]="{'active':linkNam==currentPageNumber}">
+        <div tabindex="0" class="page-link">{{linkNam}}</div>
+      </li>
+
+
+      <li *ngIf="!disableNumberPageNext" (click)="NumberPageNext()"  class="paginate_button page-item ">
+        <div tabindex="0" class="page-link page-dots-text">...</div>
+      </li>
+
+      <li class="paginate_button page-item next">
+        <button style="padding: 0px!important;"  (click)="buttonNextPage()" [disabled]="disableLastPageButton || (totalPages == 1 && this.currentPageNumber == 1)" class="btn">
+          <div class="last-triangle">
+            <div tabindex="0" class="page-link">{{nextText[this.sessionService.activeLanguage]}}</div>
+          </div>
+        </button>
+      </li>
+      <li style="width: 62px">
+        <div class="align-items-center"
+             style="padding-top: 0px;margin-bottom: 12px; margin-left:20px; ">
+          <mat-form-field>
+            <mat-select class="selected_mat" style="width: 70px" [(value)]="selectedPage" (selectionChange)="pageSizeChanged($event.value)">
+              <mat-option *ngFor="let entries of pageSizes" [value]="entries">
+                {{entries}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </li>
+    </ul>
+    <ul *ngIf="isMobile" style="margin: 0px !important;" class="pagination">
+      <li class="paginate_button page-item previous">
+        <button style="padding: 0px!important;" (click)="buttonPreviousPage()" [disabled]="disablePreviousPageButton || (totalPages == 1 && currentPageNumber == 1)" class="btn">
+          <div class="last-triangle">
+            <div tabindex="0" class="page-link">&#8656;</div>
+          </div>
+        </button>
+      </li>
+
+      <li *ngIf="!disableNumberPagePrevious" (click)="NumberPagePrevious()" class="paginate_button page-item previous">
+        <div tabindex="0" class="page-link page-dots-text">...</div>
+      </li>
+      <li *ngFor="let linkNam of pageLinks" (click)="buttonNumberPage(linkNam)" class="paginate_button page-item" [ngClass]="{'active':linkNam==currentPageNumber}">
+        <div tabindex="0" class="page-link">{{linkNam}}</div>
+      </li>
+
+
+      <li *ngIf="!disableNumberPageNext" (click)="NumberPageNext()"  class="paginate_button page-item ">
+        <div tabindex="0" class="page-link page-dots-text">...</div>
+      </li>
+
+      <li class="paginate_button page-item next">
+        <button style="padding: 0px!important;"  (click)="buttonNextPage()" [disabled]="disableLastPageButton || (totalPages == 1 && this.currentPageNumber == 1)" class="btn">
+          <div class="last-triangle">
+            <div tabindex="0" class="page-link">&#8658;</div>
+          </div>
+        </button>
+      </li>
+
+    </ul>
+  </div>
+  <div class="paginate-bottom-text text-center" role="status">
+    {{showingText[this.sessionService.activeLanguage]}} {{itemNumberBegin}} {{showingToText[this.sessionService.activeLanguage]}} {{itemNumberEnd}} {{showingOfText[this.sessionService.activeLanguage]}} {{totalRows | number:'1.0-0'}} {{entriesTextText[this.sessionService.activeLanguage]}}
+  </div>
+</div>
